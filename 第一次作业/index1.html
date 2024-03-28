@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>创作你的猫meme</title>
+  <style type="text/css">
+    .btn {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn.active {
+      box-shadow: 0 0 8px 2px aqua;
+    }
+
+    .btn.active::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border-radius: 10px;
+      box-shadow: inset 0 0 8px 2px aqua;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+    }
+
+    .image-container img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .image-container .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .btn3 {
+      margin-top: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="index1.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>创作你的猫meme</h1>
+    <div class="btn-container">
+      <button onclick="sayHello()" class="btn2">喵喵喵</button>
+      <div class="btn-group">
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="开心.png,开心2.png,开心3.png,开心4.png">开心</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="愤怒.png,愤怒1.png,愤怒2.png,愤怒3.png">愤怒</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="难过.png,难过2.png,难过3.png,难过4.png,难过5.png,难过6.png">难过</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="疑惑.png,疑惑1.png,疑惑2.png">疑惑</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="悠闲 (2).png,悠闲.png">悠闲</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="睡觉1.png,睡觉.png,睡觉2.png,睡觉3.png">睡觉</a>
+        <a href="javascript:void(0);" class="btn" onclick="toggleSelection(this)" data-images="努力.png">努力</a>
+      </div>
+      <button onclick="showRandomImage()" class="btn btn3">随机创造₍˄·͈༝·͈˄*₎◞ ̑̑</button>
+    </div>
+    <div id="result-container"></div>
+  </div>
+  <script>
+  function sayHello() {
+    var response = prompt("为你的专属猫meme起个名字吧");
+    alert('快去创作吧！你的' + response + '在等你！');
+  }
+
+  var selectedButton;
+  var selectedButtonImages = [];
+
+  function toggleSelection(btn) {
+    if (btn.classList.contains('active')) {
+      btn.classList.remove('active');
+      selectedButton = null;
+      selectedButtonImages = [];
+    } else {
+      btn.classList.add('active');
+      selectedButton = btn;
+      selectedButtonImages = selectedButton.getAttribute('data-images').split(',');
+    }
+  }
+
+  function showImage(imageSource) {
+    var imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+
+    var imageElement = document.createElement('img');
+    imageElement.src = imageSource;
+    imageElement.alt = 'Meme图片';
+
+    var closeBtn = document.createElement('span');
+    closeBtn.classList.add('close-btn');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.addEventListener('click', function () {
+      imageContainer.remove();
+    });
+
+    imageContainer.appendChild(imageElement);
+    imageContainer.appendChild(closeBtn);
+
+    document.body.appendChild(imageContainer);
+  }
+
+  function showRandomImage() {
+    if (!selectedButton || selectedButtonImages.length === 0) {
+      alert('请先选择meme的特质');
+      return;
+    }
+
+    var randomIndex = Math.floor(Math.random() * selectedButtonImages.length);
+    var imageSource = selectedButtonImages[randomIndex];
+    showImage(imageSource);
+  }
+  </script>
+</body>
+
+</html>
