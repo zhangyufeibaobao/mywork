@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>鱼肥的回忆</title>
+
+
+
+    <style>
+
+      body {
+      background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+        margin: 0;
+      }
+
+      .container-fluid {
+        padding: 10px;
+      }
+
+      .custom-navbar {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0), black 10%, pink 90%, rgba(0, 0, 0, 0));
+        color: white;
+        height: 100px;
+      }
+
+      .picture {
+        width: 100px;
+        height: 100px;
+        padding-left: 20px;
+        padding-top: 8px;
+        image-rendering: crisp-edges;
+      }
+
+      .text {
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 24px;
+      }
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .shell {
+        width: 100%;
+        position: relative;
+        padding: 80px 0;
+        transition: 0.3s ease 0s;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+        .shelt:before {
+          position: absolute;
+          left: 0;
+          top: 8;
+          width: 100%;
+          height: 100%;
+          background:rgba(99,99,99,0.8);
+          content:"";
+
+      }
+      .header {
+          width: 100%;
+          text-align: center;
+          margin-bottom:80px;
+          position:relative;
+        }
+        .title {
+          color:#fff;
+          font-size: 46px;
+          font-weight: normal;
+          margin:0;
+        }
+        .timeline {
+          display: flex;
+          margin:0 auto;
+          flex-wrap: wrap;
+          flex-direction:column;
+          max-width: 700px;
+          position:relative;
+        }
+  .content-title {
+    font-weight: normal;
+    font-size:66px;
+    margin:-10px 0 0 0;
+    transition:0.4s;
+    padding:0 10px;
+    box-sizing: border-box;
+    color: #fff;
+  }
+    .content-desc {
+      margin:0;
+      font-size: 15px;
+      box-sizing: border-box;
+      color:rgba(255,255,255,0.8);
+      line-height: 25px;
+  }
+    .timeline:before {
+    position:absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left:-1px;
+    content:"";
+    background:rgba(255,255,255,0.07);
+  }
+.item {
+      padding:40px 0;
+      opacity:0.3;
+      filter: blur(2px);
+      transition:0.5s;
+      box-sizing: border-box;
+      width: calc(50% - 40px);
+      display: flex;
+      position:relative;
+      transform: translateY(-80px);
+    }
+  .item:before {
+      content: attr(data-text);
+      letter-spacing: 3px;
+      width: 100%;
+      position: absolute;
+      color:rgba(255,255,255,0.5);
+      font-size: 13px;
+      border-left: 2px solid rgba(255,255,255,1);
+      top: 70%;
+      margin-top: -5px;
+      padding-left:  15px;
+      opacity: 0;
+      right:calc(-100% - 56px);
+      font:900 20px '';
+      letter-spacing: 5px;
+    }
+
+    .item:nth-child(even){
+      align-self : flex-end;
+    }
+      .item:nth-child(even):before {
+        right: auto;
+        text-align: right;
+        left:calc(-100% - 56px);
+        padding-left: 0;
+        border-left: none;
+        border-right: 2px solid rgba(255,255，255，0.5);
+        padding-right: 15px;
+      }
+      .item--active {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0px);
+        }
+
+      .item--active:before {
+              top: 50%;
+              transition: 0.3s all 0.2s;
+              opacity: 1;
+       }
+      .item--active .content-title {
+        margin:-50px 0 20px 0;
+      }
+      .img {
+          max-width:100%;
+          box-shadow:0 10px 15px rgba(0,0,0,0.4);
+      }
+
+      .subtitle {
+            color:rgba(255,255,255,0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+    .footer {
+        padding: 95px 0;
+        text-align: center;
+    }
+
+  .footer a {
+    color: #999;
+    display: inline-block;
+  }
+  @media only screen and (max-width:767px) {
+    .item {
+        align-self :baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+      }
+
+    .item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+      }
+        .item:last-child {
+            padding-bottom:40px;
+        }
+        @media only screen and (max-width: 767px){
+          .timeline:before {
+              left: 40px;
+          }
+        }}
+
+    </style>
+
+        <style>
+        .new-container {
+              width: 100%;
+              height: 40%;
+              align-items: center;
+             justify-content: center;
+             flex-direction: column;
+             height: 100vh;
+             background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+             overflow: hidden;
+            }
+
+            /* 定义外层容器样式 */
+
+            /* 定义内容容器样式 */
+            .content2 {
+                display: flex;
+                /* 设置为弹性盒子布局 */
+                justify-content: center;
+                /* 主轴居中对齐 */
+                align-items: center;
+                /* 交叉轴居中对齐 */
+                position: absolute;
+                /* 绝对定位 */
+                width: 100%;
+                /* 宽度100% */
+                height: 100%;
+                /* 高度100% */
+                transform-origin: center;
+                /* 变形原点为中心 */
+                transform-style: preserve-3d;
+                /* 保持3D变换 */
+                transform: translateZ(-30vw) rotateY(0);
+                /* 变换：沿z轴平移-30vw，绕y轴旋转0度 */
+                animation: carousel 9s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+                /* 动画：名称为carousel，持续时间9秒，无限循环，缓动函数为cubic-bezier(0.77, 0, 0.175, 1)，动画结束后保持最后状态 */
+            }
+
+            /* 定义项目样式 */
+            .item2 {
+                position: absolute;
+                /* 绝对定位 */
+                width: 60vw;
+                /* 宽度占视口宽度的60% */
+                height: 40vw;
+                /* 高度占视口高度的40% */
+                max-width: 380px;
+                /* 最大宽度为380像素 */
+                max-height: 250px;
+                /* 最大高度为250像素 */
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                /* 设置阴影 */
+                border-radius: 6px;
+                /* 边框圆角半径为6像素 */
+                background-size: cover;
+                /* 背景图片等比例缩放并覆盖整个容器 */
+                -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.3));
+                /* 创建倒影效果 */
+            }
+
+            /* 第一个项目样式 */
+            .item2:nth-child(1) {
+                background-image: url(111.jpg);
+                /* 背景图片为01.jpg */
+                transform: rotateY(0) translateZ(35vw);
+                /* 变换：绕y轴旋转0度，沿z轴平移35vw */
+            }
+
+            /* 第二个项目样式 */
+            .item2:nth-child(2) {
+                background-image: url(222.jpg);
+                /* 背景图片为02.jpg */
+                transform: rotateY(120deg) translateZ(35vw);
+                /* 变换：绕y轴旋转120度，沿z轴平移35vw */
+            }
+
+            /* 第三个项目样式 */
+            .item2:nth-child(3) {
+                background-image: url(mika5.jpg);
+                /* 背景图片为03.jpg */
+                transform: rotateY(240deg) translateZ(35vw);
+                /* 变换：绕y轴旋转240度，沿z轴平移35vw */
+            }
+
+            /* 定义动画 */
+            @keyframes carousel {
+
+                0%,
+                17.5% {
+                    transform: translateZ(-35vw) rotateY(0);
+                    /* 变换：沿z轴平移-35vw，绕y轴旋转0度 */
+                }
+
+                27.5%,
+                45% {
+                    transform: translateZ(-35vw) rotateY(-120deg);
+                    /* 变换：沿z轴平移-35vw，绕y轴旋转-120度 */
+                }
+
+                55%,
+                72.5% {
+                    transform: translateZ(-35vw) rotateY(-240deg);
+                    /* 变换：沿z轴平移-35vw，绕y轴旋转-240度 */
+                }
+
+                82.5%,
+                100% {
+                    transform: translateZ(-35vw) rotateY(-360deg);
+                    /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
+                }
+            }
+
+
+            .text4 {
+                position: absolute;
+                margin-top: 50%;
+                margin-left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: 'Comic Sans MS', cursive;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+              }
+        </style>
+
+
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="custom-navbar">
+        <img src="标签图标.png" alt="图片" class="picture">
+        <span class="text">鱼肥的委托回忆记录本</span>
+      </div>
+    </div>
+
+
+    <div class="shell" id="shell">
+      <div class="header">
+        <h2 class="title">fatfish&girls</h2>
+        <h3 class="subtitle" >回忆</h3>
+      </div>
+      <div class="timeline">
+
+        <div class="item" data-text="《最开始》">
+          <div class="content">
+            <img src="李泽言4.jpg" alt="" class="img">
+            <h2 class="content-title">2023.4.8</h2>
+            <p class="content-desc">这是我第一次接委托，不自量力的接了李泽言的委托，我把他出的像个小孩，很害怕见到面之后你会不高兴，但是你笑着跟我说，
+              有种和初中版李泽言早恋的感觉。
+            </p>
+          </div>
+        </div>
+
+        <div class="item" data-text="《长见识》">
+          <div class="content">
+            <img src="及川彻1.jpg" alt="" class="img">
+            <h2 class="content-title">2023.4.15</h2>
+            <p class="content-desc">我的第二次委托，单主特别好看，和她一起吃了'brouch'，第一次听说这个词，才知道是早午饭的意思，什刹海边的那家咖啡厅的
+              意面味道很像我们陕西的油泼辣子面。后面去做了饼干，一人一盒，味道还不错。
+            </p>
+          </div>
+        </div>
+
+        <div class="item" data-text="《悸动》">
+          <div class="content">
+            <img src="五条悟姐姐2.jpg" alt="" class="img">
+            <h2 class="content-title">2023.5.7</h2>
+            <p class="content-desc">我们一起去了猫咖，后面吃饭的时候聊到她已经27岁了，马上就要出国定居，并且她已经订婚了，这些都让我觉得神奇，后面我看到她结婚的招聘，我哭了很久，我清楚的感觉到我只是她生命中的过客，我们在约定的这一天逃离原本的生活来和对方见面，此后又快速回归正轨。
+            </p>
+          </div>
+        </div>
+
+
+      <div class="item" data-text="《温度最高》">
+        <div class="content">
+          <img src="原皮3.jpg" alt="" class="img">
+          <h2 class="content-title">2023.5.14</h2>
+          <p class="content-desc">这次比较特殊，单主想要约我陪她去朝阳公园露营，所以不需要出cos，我们在草地上躺了一上午，下午就去朝阳公园里面的
+            游乐设施玩，我已经在尽可能的彰显男友力，但是鬼屋还是不敢进去，第二天很不幸的阳了，体温真的很高。
+          </p>
+        </div>
+      </div>
+
+              <div class="item" data-text="《生日》">
+                <div class="content">
+                  <img src="白起1.jpg" alt="" class="img">
+                  <h2 class="content-title">2023.5.22</h2>
+                  <p class="content-desc">这位单主其实就住在我楼下，她那天过生日，我们度过了很美好的一天。
+                  </p>
+                </div>
+              </div>
+
+      <div class="item" data-text="《羁绊》">
+        <div class="content">
+          <img src="夏彦3.jpg" alt="" class="img">
+          <h2 class="content-title">2023.6.24</h2>
+          <p class="content-desc">我们一起在市区逛街，我将做好的陶瓷杯送给她了，是一只丑丑的小猫，她后面告诉我，我是第一个送她花的人，她想回馈我99束鲜花，我们成了很好的朋友。
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+
+                <div class="item" data-text="《跨越次元》">
+                  <div class="content">
+                    <img src="莫奕2.jpg" alt="" class="img">
+                    <h2 class="content-title">2023.7.7</h2>
+                    <p class="content-desc">这次委托很沉浸，没有拍很多照片，在水族馆回头看她的时候，我被她眼中的感情震撼到，我能感受到她在透过我的身体看向另一个人，那个处在二次元中她深爱的人。
+                    </p>
+                  </div>
+                </div>
+
+        <div class="item" data-text="《如果他们生活在现实世界》">
+          <div class="content">
+            <img src="阿库娅1.jpg" alt="" class="img">
+            <h2 class="content-title">2023.8.27</h2>
+            <p class="content-desc">暑假接的一次委托，她是西安一所大学的老师，也很喜欢摄影，我们一起cos了她最喜欢的cp。
+            </p>
+          </div>
+        </div>
+
+                <div class="item" data-text="《可爱》">
+                  <div class="content">
+                    <img src="五条悟妹妹2.jpg" alt="" class="img">
+                    <h2 class="content-title">2023.11.3</h2>
+                    <p class="content-desc">这位单主还是一名高中生，我们去了鼓楼旁边的咖啡厅，吃到了很好吃的舒芙蕾，后面遇到一家狗咖，刚好有和服我们就体验了一下。
+                    </p>
+                  </div>
+                </div>
+
+
+                        <div class="item" data-text="《大小姐和她的190保镖》">
+                          <div class="content">
+                            <img src="五条悟国贸3.jpg" alt="" class="img">
+                            <h2 class="content-title">2023.11.6</h2>
+                            <p class="content-desc">这位单主马上要去日本留学了，我们一起去了国贸吃饭，后面又去了三里屯逛街做手工，中间还被一家照相馆拉去拍照了，拍出了我很喜欢的照片。
+                            </p>
+                          </div>
+                        </div>
+
+        <div class="item" data-text="《高中生情侣》">
+          <div class="content">
+            <img src="赤纬1.jpg" alt="" class="img">
+            <h2 class="content-title">2024.3.4</h2>
+            <p class="content-desc">拖了很久终于见面了，单主是一位单纯美丽的高中生妹妹，刚好我出的角色也是高中生，有种高中生早恋的感觉。
+            </p>
+          </div>
+        </div>
+
+
+
+
+                <div class="item" data-text="《制作人和小偶像》">
+                  <div class="content">
+                    <img src="mika2.jpg" alt="" class="img">
+                    <h2 class="content-title">2024.3.4</h2>
+                    <p class="content-desc">特别开心的一次委托，感觉单主把我当成了她的弟弟在照顾我,透过细节感受到她对mika的爱与欣赏。
+                    </p>
+                  </div>
+                </div>
+      </div>
+  </div>
+
+      <div class="new-container">
+
+          <div class="shell2">
+            <div class="text4">
+              <h1>Thanks for your reading.</h1>
+
+            </div>
+           <div class="content2">
+               <div class="item2"></div>
+               <div class="item2"></div>
+               <div class="item2"></div>
+           </div>
+         </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    (function ($) {
+      $.fn.timeline = function () {
+        var selectors = {
+          id: $(this),
+          item: $(this).find(".item"),
+          activeClass: "item--active",
+          img: ".img"
+        };
+        // 激活第一个时间轴
+        selectors.item.eq(0).addClass(selectors.activeClass);
+        selectors.id.css("background-image", "url(" + selectors.item.first().find(selectors.img).attr("src") + ")");
+
+        // 获取timeline总数
+        var itemLength = selectors.item.length;
+        $(window).scroll(function () {
+          var max, min;
+          var pos = $(this).scrollTop();
+          selectors.item.each(function (i) {
+            min = $(this).offset().top;
+            max = $(this).height() + $(this).offset().top;
+            var that = $(this);
+
+            if (i === itemLength - 2 && pos > min + $(this).height() / 2) {
+              selectors.item.removeClass(selectors.activeClass);
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                selectors.item.last().find(selectors.img).attr("src") +
+                ")"
+              );
+              selectors.item.last().addClass(selectors.activeClass);
+            } else if (pos <= max - 10 && pos >= min) {
+              selectors.id.css(
+                "background-image",
+                "url(" +
+                that.find(selectors.img).attr("src") +
+                ")"
+              );
+              selectors.item.removeClass(selectors.activeClass);
+              that.addClass(selectors.activeClass);
+            }
+          });
+        });
+      };
+    })(jQuery);
+
+    $(document).ready(function () {
+      $("#shell").timeline();
+    });
+  </script>
+
+</body>
+
+</html>
